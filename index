@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BEVIN // Digital Media Portfolio</title>
+<meta name="description" content="Bevin Abhinav Raj — Graphics Designer, Social Media Handler and Sales Executive.">
+<style>
+:root{--bg:#05070b;--panel:rgba(10,14,23,.72);--line:rgba(150,190,255,.18);--text:#eef5ff;--muted:#91a0b7;--cyan:#67e8f9;--blue:#60a5fa;--violet:#a78bfa;--green:#86efac}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+#scene{position:fixed;inset:0;z-index:-2}.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 15%,rgba(0,0,0,.2) 55%,rgba(0,0,0,.72) 100%)}
+.noise{position:fixed;inset:0;opacity:.035;z-index:10;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 30px));z-index:20;padding:11px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(5,8,14,.62);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;box-shadow:0 12px 50px rgba(0,0,0,.28)}
+.logo{font-weight:900;letter-spacing:.12em;font-size:13px}.logo span{color:var(--cyan)}nav a{color:#b9c6d9;text-decoration:none;font-size:12px;margin-left:20px;transition:.25s}nav a:hover{color:white}
+main{width:min(1120px,calc(100% - 32px));margin:auto}.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px}.hero-inner{width:100%;display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}.eyebrow{font:700 11px/1 monospace;letter-spacing:.24em;color:var(--cyan);margin-bottom:18px}.eyebrow:before{content:"";display:inline-block;width:38px;height:1px;background:var(--cyan);vertical-align:middle;margin-right:12px;box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(58px,9vw,124px);line-height:.82;letter-spacing:-.075em;margin:0 0 26px;font-weight:950;text-transform:uppercase;text-shadow:0 0 45px rgba(96,165,250,.18)}h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(220,235,255,.72)}.hero p{max-width:650px;color:#aab7ca;font-size:17px;line-height:1.7}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:10px;border:1px solid var(--line);color:white;text-decoration:none;font-size:13px;font-weight:750;background:rgba(255,255,255,.04);transition:.25s}.btn.primary{background:linear-gradient(135deg,rgba(103,232,249,.18),rgba(96,165,250,.16));border-color:rgba(103,232,249,.45)}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.3);border-color:rgba(150,210,255,.5)}
+.holo{height:430px;position:relative;display:grid;place-items:center}.core{width:220px;height:220px;border:1px solid rgba(103,232,249,.42);border-radius:30%;transform:rotate(45deg);box-shadow:0 0 45px rgba(103,232,249,.12),inset 0 0 40px rgba(96,165,250,.08);position:relative;animation:float 5s ease-in-out infinite}.core:before,.core:after{content:"";position:absolute;inset:24px;border:1px solid rgba(167,139,250,.32);border-radius:50%;transform:rotate(-20deg)}.core:after{inset:54px;border-color:rgba(134,239,172,.28);transform:rotate(35deg)}.scan{position:absolute;width:310px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 16px var(--cyan);animation:scan 3.5s linear infinite}.hud{position:absolute;inset:15px;pointer-events:none;font:10px monospace;color:#7290aa}.hud b{color:var(--cyan)}.hud .tl{position:absolute;top:0;left:0}.hud .tr{position:absolute;top:0;right:0;text-align:right}.hud .bl{position:absolute;bottom:0;left:0}.hud .br{position:absolute;bottom:0;right:0;text-align:right}
+section{padding:100px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}.kicker{font:700 10px monospace;letter-spacing:.2em;color:var(--cyan)}h2{font-size:clamp(32px,5vw,60px);letter-spacing:-.05em;margin:8px 0 0}.sub{color:var(--muted);max-width:540px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,23,37,.75),rgba(6,10,18,.55));border-radius:16px;padding:24px;backdrop-filter:blur(12px);box-shadow:0 16px 50px rgba(0,0,0,.16);transition:.3s;position:relative;overflow:hidden}.card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.035),transparent 70%);transform:translateX(-100%);transition:.7s}.card:hover{transform:translateY(-5px);border-color:rgba(103,232,249,.35)}.card:hover:after{transform:translateX(100%)}.about{grid-column:span 7}.contact{grid-column:span 5}.card h3{margin:0 0 10px;font-size:18px}.card p{color:#aab6c8;line-height:1.7;font-size:14px;margin:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{font:700 10px monospace;color:#c8d6e8;border:1px solid var(--line);padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.025)}
+.timeline{grid-column:span 12;display:grid;gap:12px}.item{display:grid;grid-template-columns:120px 1fr 90px;gap:22px;align-items:start;border:1px solid var(--line);padding:22px;border-radius:14px;background:rgba(7,12,20,.64)}.date{font:700 11px monospace;color:var(--cyan)}.item h3{margin:0 0 5px}.item small{color:#8090a8}.item p{color:#aab6c8;line-height:1.6;margin:10px 0 0;font-size:14px}.status{font:700 10px monospace;color:var(--green);text-align:right}
+.skill{grid-column:span 4}.skill .num{font:800 34px monospace;color:#dcecff}.skill p{margin-top:5px}.meter{height:2px;background:#1b2738;margin-top:20px;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));box-shadow:0 0 15px var(--cyan)}
+.terminal{grid-column:span 12;background:#030508;border:1px solid #1c2a3c;border-radius:15px;padding:0;overflow:hidden}.termbar{padding:10px 14px;border-bottom:1px solid #182434;color:#71849d;font:10px monospace}.term{padding:24px;font:13px/2 monospace;color:#9eb0c7}.term .g{color:var(--green)}.term .c{color:var(--cyan)}.term .v{color:#c4b5fd}
+footer{padding:50px 0 80px;color:#607089;font:10px monospace;display:flex;justify-content:space-between;gap:20px;border-top:1px solid rgba(150,190,255,.1)}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@keyframes float{50%{transform:rotate(49deg) translateY(-13px)}}@keyframes scan{0%{transform:translateY(-150px);opacity:0}15%,80%{opacity:1}100%{transform:translateY(150px);opacity:0}}
+@media(max-width:800px){nav .links{display:none}.hero-inner{grid-template-columns:1fr}.holo{height:270px}.core{width:150px;height:150px}.about,.contact,.skill{grid-column:span 12}.item{grid-template-columns:1fr}.status{text-align:left}.hero{padding-top:130px}section{padding:75px 0}}
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas><div class="vignette"></div><div class="noise"></div>
+<nav><div class="logo">BEVIN<span>//</span>PORTFOLIO</div><div class="links"><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#skills">SKILLS</a><a href="#contact">CONTACT</a></div></nav>
+
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="reveal">
+<div class="eyebrow">DIGITAL MEDIA // ANIMATION // DESIGN</div>
+<h1>BEVIN<br><span>ABHINAV RAJ</span></h1>
+<p>Graphics Designer, Social Media Handler and Sales Executive. A motivated, tech-savvy Digital Media & Animation student with a strong background in visual communication, social media marketing and automotive knowledge.</p>
+<div class="actions"><a class="btn primary" href="#experience">ENTER PORTFOLIO ↗</a><a class="btn" href="mailto:bevinabhi@gmail.com">CONTACT ME</a></div>
+</div>
+<div class="holo reveal"><div class="hud"><div class="tl">SYSTEM / PORTFOLIO<br><b>ONLINE</b></div><div class="tr">ENGINE / THREE.JS<br><b>WEBGL</b></div><div class="bl">INPUT / MOUSE<br><b>TRACKING ACTIVE</b></div><div class="br">LOCATION<br><b>BANGALORE, INDIA</b></div></div><div class="core"></div><div class="scan"></div></div>
+</div>
+</section>
+
+<section id="about">
+<div class="section-head reveal"><div><div class="kicker">01 // PROFILE</div><h2>Built for visual impact.</h2></div><div class="sub">A portfolio interface inspired by real-time engines: depth, lighting, motion and a little controlled chaos.</div></div>
+<div class="grid">
+<div class="card about reveal"><h3>About Me</h3><p>Motivated and tech-savvy student currently pursuing a degree in Digital Media & Animation at St. Joseph's University. Combines a strong background in Social Media Marketing and graphic design with a deep passion and technical knowledge of motorcycles and automotive parts. Seeking a role in Sales, Marketing, or Customer Support where communication skills and technical expertise can drive business growth.</p><div class="tags"><span class="tag">DIGITAL MEDIA</span><span class="tag">GRAPHIC DESIGN</span><span class="tag">SOCIAL MEDIA</span><span class="tag">AUTOMOTIVE</span></div></div>
+<div class="card contact reveal" id="contact"><h3>Contact</h3><p><b>+91 9513961119</b><br><br><b>bevinabhi@gmail.com</b><br><br>Rajajinagar / Shantinagar<br>Bangalore, India</p></div>
+</div>
+</section>
+
+<section id="experience">
+<div class="section-head reveal"><div><div class="kicker">02 // LOG</div><h2>Experience & Education.</h2></div><div class="sub">Selected entries from the supplied CV, kept factual rather than embellished.</div></div>
+<div class="grid"><div class="timeline">
+<div class="item reveal"><div class="date">2024 — PRESENT</div><div><h3>St. Joseph's University</h3><small>B.Voc. Digital Media and Animation</small><p>Developed communication and visual storytelling skills with experience in digital tools and audience engagement strategies.</p></div><div class="status">EDUCATION</div></div>
+<div class="item reveal"><div class="date">2022 — 2024</div><div><h3>St Josephs Pre-University</h3><small>Science with Computers · 88%</small></div><div class="status">EDUCATION</div></div>
+<div class="item reveal"><div class="date">2024 — 2025</div><div><h3>Senior Graphic Designer · Firstshow Infotainment</h3><small>Graphic design / client projects</small><p>Created most of the designs for the company and completed many projects for clients.</p></div><div class="status">EXPERIENCE</div></div>
+<div class="item reveal"><div class="date">2024 — 2025</div><div><h3>Social Media Head · SPPS Institute</h3><small>Social media / content</small><p>Handled the institute's social media handles and created interactive, entertaining reels to attract attention and grow the institute's name.</p></div><div class="status">EXPERIENCE</div></div>
+</div></div>
+</section>
+
+<section id="skills">
+<div class="section-head reveal"><div><div class="kicker">03 // LOADOUT</div><h2>Skills & strengths.</h2></div><div class="sub">A practical mix of creative, communication, sales and automotive knowledge.</div></div>
+<div class="grid">
+<div class="card skill reveal"><div class="num">01</div><h3>Graphic Design</h3><p>Visual communication and design work across digital media.</p><div class="meter"><i style="width:92%"></i></div></div>
+<div class="card skill reveal"><div class="num">02</div><h3>Social Media</h3><p>Handle management, content creation and audience engagement.</p><div class="meter"><i style="width:94%"></i></div></div>
+<div class="card skill reveal"><div class="num">03</div><h3>Communication</h3><p>Professional communication, customer support and conflict resolution.</p><div class="meter"><i style="width:90%"></i></div></div>
+<div class="card skill reveal"><div class="num">04</div><h3>Marketing</h3><p>Content strategy and audience-focused digital promotion.</p><div class="meter"><i style="width:84%"></i></div></div>
+<div class="card skill reveal"><div class="num">05</div><h3>Sales</h3><p>Identifying customer needs and matching them with suitable products.</p><div class="meter"><i style="width:82%"></i></div></div>
+<div class="card skill reveal"><div class="num">06</div><h3>Automotive Knowledge</h3><p>Bikes, parts, motorcycle mechanics, performance upgrades and technical communication.</p><div class="meter"><i style="width:90%"></i></div></div>
+<div class="terminal reveal"><div class="termbar">BEVIN@PORTFOLIO:~$ ./profile --interests</div><div class="term"><span class="g">[OK]</span> automotive enthusiast<br><span class="g">[OK]</span> follows Indian two-wheeler market trends<br><span class="g">[OK]</span> interested in bike maintenance & reviews<br><span class="g">[OK]</span> animation / Adobe Suite tools<br><span class="c">[LANG]</span> English · Kannada · Hindi<br><span class="v">[AVAIL]</span> Part-time / Internship / Project-based · 1pm–8pm · Bangalore</div></div>
+</div>
+</section>
+
+<section>
+<div class="card reveal" style="text-align:center;padding:55px 25px"><div class="kicker">04 // CONNECT</div><h2 style="margin-bottom:12px">Let's build something.</h2><p style="color:#9aa9bd;max-width:560px;margin:auto;line-height:1.7">For sales, marketing, customer support, graphic design or digital-media opportunities, reach out directly.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="mailto:bevinabhi@gmail.com">bevinabhi@gmail.com</a><a class="btn" href="tel:+919513961119">+91 9513961119</a></div></div>
+</section>
+<footer><span>BEVIN // DIGITAL MEDIA & ANIMATION</span><span>THREE.JS / WEBGL / INTERACTIVE PORTFOLIO</span></footer>
+</main>
+
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+
+const canvas=document.querySelector('#scene');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
+renderer.setClearColor(0x05070b,1);
+const scene=new THREE.Scene();
+scene.fog=new THREE.FogExp2(0x05070b,.032);
+const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,200);camera.position.set(0,1.5,18);
+scene.add(new THREE.AmbientLight(0x7890ff,.55));
+const key=new THREE.PointLight(0x5eeaff,24,50);key.position.set(5,6,9);scene.add(key);
+const fill=new THREE.PointLight(0x9f7aea,18,40);fill.position.set(-7,1,5);scene.add(fill);
+
+const group=new THREE.Group();scene.add(group);
+const grid=new THREE.GridHelper(70,35,0x24405d,0x122338);grid.position.y=-4;grid.rotation.x=0;group.add(grid);
+const rings=[];
+for(let i=0;i<7;i++){
+  const g=new THREE.TorusGeometry(2.7+i*.65,.008,8,96);
+  const m=new THREE.MeshBasicMaterial({color:i%2?0x536dff:0x4de3ee,transparent:true,opacity:.22});
+  const r=new THREE.Mesh(g,m);r.rotation.x=Math.PI/2;r.position.y=-2+i*.35;r.position.z=-2-i*1.2;group.add(r);rings.push(r);
+}
+const particleGeo=new THREE.BufferGeometry(),count=900,positions=new Float32Array(count*3);
+for(let i=0;i<count;i++){positions[i*3]=(Math.random()-.5)*55;positions[i*3+1]=(Math.random()-.5)*28;positions[i*3+2]=(Math.random()-.5)*45-8}
+particleGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+const points=new THREE.Points(particleGeo,new THREE.PointsMaterial({color:0x83b7ff,size:.035,transparent:true,opacity:.7}));
+scene.add(points);
+
+const wireMat=new THREE.MeshBasicMaterial({color:0x5eeaff,wireframe:true,transparent:true,opacity:.12});
+for(let i=0;i<18;i++){
+  const s=THREE.MathUtils.randFloat(.35,1.4);
+  const geo=i%2?new THREE.IcosahedronGeometry(s,1):new THREE.BoxGeometry(s,s,s);
+  const mesh=new THREE.Mesh(geo,wireMat.clone());
+  mesh.position.set((Math.random()-.5)*28,(Math.random()-.5)*13,(Math.random()-.5)*25-7);
+  mesh.rotation.set(Math.random()*6,Math.random()*6,Math.random()*6);
+  group.add(mesh);
+}
+let mx=0,my=0,tx=0,ty=0;
+addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5)});
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+const clock=new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);const t=clock.getElapsedTime();
+  mx+=(tx-mx)*.035;my+=(ty-my)*.035;
+  camera.position.x=mx*2.5;camera.position.y=1.5-my*1.7;camera.lookAt(mx*.7,-.4,-3);
+  group.rotation.y=mx*.12;group.rotation.x=-my*.04;
+  points.rotation.y=t*.006;points.rotation.x=t*.002;
+  rings.forEach((r,i)=>{r.rotation.z=t*(.03+i*.004)*(i%2?-1:1);r.material.opacity=.13+.09*Math.sin(t+i)});
+  renderer.render(scene,camera);
+}
+animate();
+
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
